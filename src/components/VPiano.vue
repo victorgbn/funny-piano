@@ -41,11 +41,25 @@ export default {
       noteC.play();
     });
 
+    keyDo.addEventListener("mousedown", () => {
+        document.getElementsByClassName('note-do')[0].style.color = "#FFD12D";
+    });
+    keyDo.addEventListener("mouseup", () => {
+        document.getElementsByClassName('note-do')[0].style.color = "";
+    });
+
     const keyRe = document.getElementById("key-re");
     keyRe.addEventListener("click", () => {
       const noteD = document.createElement("audio");
       noteD.src = "/assets/sounds/D.mp3";
       noteD.play();
+    });
+
+    keyRe.addEventListener("mousedown", () => {
+        document.getElementsByClassName('note-re')[0].style.color = "#FFD12D";
+    });
+    keyRe.addEventListener("mouseup", () => {
+        document.getElementsByClassName('note-re')[0].style.color = "";
     });
 
     const keyMi = document.getElementById("key-mi");
@@ -55,11 +69,25 @@ export default {
       noteE.play();
     });
 
+    keyMi.addEventListener("mousedown", () => {
+        document.getElementsByClassName('note-mi')[0].style.color = "#FFD12D";
+    });
+    keyMi.addEventListener("mouseup", () => {
+        document.getElementsByClassName('note-mi')[0].style.color = "";
+    });
+
     const keyFa = document.getElementById("key-fa");
     keyFa.addEventListener("click", () => {
       const noteF = document.createElement("audio");
       noteF.src = "/assets/sounds/F.mp3";
       noteF.play();
+    });
+
+    keyFa.addEventListener("mousedown", () => {
+        document.getElementsByClassName('note-fa')[0].style.color = "#FFD12D";
+    });
+    keyFa.addEventListener("mouseup", () => {
+        document.getElementsByClassName('note-fa')[0].style.color = "";
     });
 
     const keySol = document.getElementById("key-sol");
@@ -69,6 +97,13 @@ export default {
       noteG.play();
     });
 
+    keySol.addEventListener("mousedown", () => {
+        document.getElementsByClassName('note-sol')[0].style.color = "#FFD12D";
+    });
+    keySol.addEventListener("mouseup", () => {
+        document.getElementsByClassName('note-sol')[0].style.color = "";
+    });
+
     const keyLa = document.getElementById("key-la");
     keyLa.addEventListener("click", () => {
       const noteA = document.createElement("audio");
@@ -76,11 +111,25 @@ export default {
       noteA.play();
     });
 
+    keyLa.addEventListener("mousedown", () => {
+        document.getElementsByClassName('note-la')[0].style.color = "#FFD12D";
+    });
+    keyLa.addEventListener("mouseup", () => {
+        document.getElementsByClassName('note-la')[0].style.color = "";
+    });
+
     const keySi = document.getElementById("key-si");
     keySi.addEventListener("click", () => {
       const noteB = document.createElement("audio");
       noteB.src = "/assets/sounds/B.mp3";
       noteB.play();
+    });
+
+    keySi.addEventListener("mousedown", () => {
+        document.getElementsByClassName('note-si')[0].style.color = "#FFD12D";
+    });
+    keySi.addEventListener("mouseup", () => {
+        document.getElementsByClassName('note-si')[0].style.color = "";
     });
 
     const keyDoD = document.getElementById("key-do-d");
@@ -289,4 +338,5 @@ export default {
     display: none;
   }
 }
+
 </style>
