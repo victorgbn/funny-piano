@@ -19,13 +19,13 @@
   </div>
 
   <div class="container-note">
-    <p>DO</p>
-    <p>RÉ</p>
-    <p>MI</p>
-    <p>FA</p>
-    <p>SOL</p>
-    <p>LA</p>
-    <p>SI</p>
+    <p class="note-do">DO</p>
+    <p class="note-re">RÉ</p>
+    <p class="note-mi">MI</p>
+    <p class="note-fa">FA</p>
+    <p class="note-sol">SOL</p>
+    <p class="note-la">LA</p>
+    <p class="note-si">SI</p>
   </div>
 </div>
 </template>
