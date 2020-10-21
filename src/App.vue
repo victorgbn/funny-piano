@@ -3,7 +3,6 @@
     <v-header></v-header>
     <v-emoji></v-emoji>
     <v-piano></v-piano>
-    <v-note></v-note>
   </div>
 </template>
 
@@ -12,14 +11,12 @@
 import VHeader from '@/components/VHeader'
 import VEmoji from '@/components/VEmoji'
 import VPiano from  '@/components/VPiano'
-import VNote from  '@/components/VNote'
 export default {
   name: "App",
   components: {
     VHeader,
     VEmoji,
     VPiano,
-    VNote
   },
 };
 

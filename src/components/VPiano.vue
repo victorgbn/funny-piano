@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="container-piano">
     <div class="key-white" id="key-do"></div>
     <div class="key-white" id="key-re"></div>
@@ -16,6 +17,17 @@
       <div class="key-black" id="key-la-d"></div>
     </div>
   </div>
+
+  <div class="container-note">
+    <p>DO</p>
+    <p>RÉ</p>
+    <p>MI</p>
+    <p>FA</p>
+    <p>SOL</p>
+    <p>LA</p>
+    <p>SI</p>
+  </div>
+</div>
 </template>
 
 <script>
@@ -260,6 +272,21 @@ export default {
   }
   .key-black:nth-child(5) {
     left: 298px;
+  }
+}
+
+.container-note {
+  display: flex;
+  justify-content: space-around;
+  width: 531px;
+  margin-top: 48px;
+  font-family: "PT Mono", monospace;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 700px) {
+  .container-note {
+    display: none;
   }
 }
 </style>
