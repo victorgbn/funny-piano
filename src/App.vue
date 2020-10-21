@@ -28,7 +28,11 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(135deg, #ff9d6c 0%, #bb4e75 100%);
+  background: linear-gradient(135deg, #ff9d6c, #bb4e75);
+   background-size: 400% 400%;
+    -webkit-animation: AnimationName 8s ease infinite;
+    -moz-animation: AnimationName 8s ease infinite;
+    animation: AnimationName 8s ease infinite;
 }
 
 @media (max-width: 700px) {
@@ -40,5 +44,21 @@ export default {
   .container-title {
     margin: 0;
   }
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 51%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 51%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 51%}
+    100%{background-position:0% 50%}
 }
 </style>

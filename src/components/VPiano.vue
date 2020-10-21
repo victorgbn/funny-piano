@@ -41,74 +41,6 @@ export default {
       noteC.play();
     });
 
-    document.addEventListener("keydown", () => {
-      if (event.isComposing || event.keyCode === 81) {
-        const noteC = document.createElement("audio");
-        noteC.src = "/assets/sounds/C.mp3";
-        noteC.play();
-      }
-      if (event.isComposing || event.keyCode === 83) {
-        const noteD = document.createElement("audio");
-        noteD.src = "/assets/sounds/D.mp3";
-        noteD.play();
-      }
-      if (event.isComposing || event.keyCode === 68) {
-        const noteE = document.createElement("audio");
-        noteE.src = "/assets/sounds/E.mp3";
-        noteE.play();
-      }
-      if (event.isComposing || event.keyCode === 70) {
-        const noteF = document.createElement("audio");
-        noteF.src = "/assets/sounds/F.mp3";
-        noteF.play();
-      }
-      if (event.isComposing || event.keyCode === 71) {
-        const noteG = document.createElement("audio");
-        noteG.src = "/assets/sounds/G.mp3";
-        noteG.play();
-      }
-      if (event.isComposing || event.keyCode === 72) {
-        const noteA = document.createElement("audio");
-        noteA.src = "/assets/sounds/A.mp3";
-        noteA.play();
-      }
-      if (event.isComposing || event.keyCode === 74) {
-        const noteB = document.createElement("audio");
-        noteB.src = "/assets/sounds/B.mp3";
-        noteB.play();
-      }
-      if (event.isComposing || event.keyCode === 90) {
-        const noteDoD = document.createElement("audio");
-        const uriDoD = encodeURIComponent("/assets/sounds/C#.mp3");
-        noteDoD.src = uriDoD;
-        noteDoD.play();
-      }
-      if (event.isComposing || event.keyCode === 69) {
-        const noteReD = document.createElement("audio");
-        const uriReD = encodeURIComponent("/assets/sounds/D#.mp3");
-        noteReD.src = uriReD;
-        noteReD.play();
-      }
-      if (event.isComposing || event.keyCode === 84) {
-        const noteFaD = document.createElement("audio");
-        const uriFaD = encodeURIComponent("/assets/sounds/F#.mp3");
-        noteFaD.src = uriFaD;
-        noteFaD.play();
-      }
-      if (event.isComposing || event.keyCode === 89) {
-        const noteSolD = document.createElement("audio");
-        const uriSolD = encodeURIComponent("/assets/sounds/G#.mp3");
-        noteSolD.src = uriSolD;
-        noteSolD.play();
-      }
-      if (event.isComposing || event.keyCode === 85) {
-        const noteLaD = document.createElement("audio");
-        const uriLaD = encodeURIComponent("/assets/sounds/A#.mp3");
-        noteLaD.src = uriLaD;
-        noteLaD.play();
-      }
-    });
-
     const keyRe = document.getElementById("key-re");
     keyRe.addEventListener("click", () => {
       const noteD = document.createElement("audio");
@@ -189,6 +121,74 @@ export default {
       const uri = encodeURIComponent("/assets/sounds/A#.mp3");
       noteLaD.src = uri;
       noteLaD.play();
+    });
+
+    document.addEventListener("keydown", () => {
+      if (event.isComposing || event.keyCode === 81) {
+        const noteC = document.createElement("audio");
+        noteC.src = "/assets/sounds/C.mp3";
+        noteC.play();
+      }
+      if (event.isComposing || event.keyCode === 83) {
+        const noteD = document.createElement("audio");
+        noteD.src = "/assets/sounds/D.mp3";
+        noteD.play();
+      }
+      if (event.isComposing || event.keyCode === 68) {
+        const noteE = document.createElement("audio");
+        noteE.src = "/assets/sounds/E.mp3";
+        noteE.play();
+      }
+      if (event.isComposing || event.keyCode === 70) {
+        const noteF = document.createElement("audio");
+        noteF.src = "/assets/sounds/F.mp3";
+        noteF.play();
+      }
+      if (event.isComposing || event.keyCode === 71) {
+        const noteG = document.createElement("audio");
+        noteG.src = "/assets/sounds/G.mp3";
+        noteG.play();
+      }
+      if (event.isComposing || event.keyCode === 72) {
+        const noteA = document.createElement("audio");
+        noteA.src = "/assets/sounds/A.mp3";
+        noteA.play();
+      }
+      if (event.isComposing || event.keyCode === 74) {
+        const noteB = document.createElement("audio");
+        noteB.src = "/assets/sounds/B.mp3";
+        noteB.play();
+      }
+      if (event.isComposing || event.keyCode === 90) {
+        const noteDoD = document.createElement("audio");
+        const uriDoD = encodeURIComponent("/assets/sounds/C#.mp3");
+        noteDoD.src = uriDoD;
+        noteDoD.play();
+      }
+      if (event.isComposing || event.keyCode === 69) {
+        const noteReD = document.createElement("audio");
+        const uriReD = encodeURIComponent("/assets/sounds/D#.mp3");
+        noteReD.src = uriReD;
+        noteReD.play();
+      }
+      if (event.isComposing || event.keyCode === 84) {
+        const noteFaD = document.createElement("audio");
+        const uriFaD = encodeURIComponent("/assets/sounds/F#.mp3");
+        noteFaD.src = uriFaD;
+        noteFaD.play();
+      }
+      if (event.isComposing || event.keyCode === 89) {
+        const noteSolD = document.createElement("audio");
+        const uriSolD = encodeURIComponent("/assets/sounds/G#.mp3");
+        noteSolD.src = uriSolD;
+        noteSolD.play();
+      }
+      if (event.isComposing || event.keyCode === 85) {
+        const noteLaD = document.createElement("audio");
+        const uriLaD = encodeURIComponent("/assets/sounds/A#.mp3");
+        noteLaD.src = uriLaD;
+        noteLaD.play();
+      }
     });
   },
 };
