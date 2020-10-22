@@ -109,11 +109,15 @@ export default {
     document.addEventListener("keydown", (e) => {
       console.log(e.keyCode);
       const el = this.$el.querySelector(`[data-keycode="${e.keyCode}"`);
-      console.log(el);
       if (el) {
         el.click();
-      }
+        el.style.backgroundColor = "#ffd12d";
+      } 
     });
+    document.addEventListener("keyup", (e) => {
+       const el = this.$el.querySelector(`[data-keycode="${e.keyCode}"`);
+        el.style.backgroundColor = "";
+    })
   },
 
   methods: {
