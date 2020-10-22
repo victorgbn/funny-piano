@@ -2,23 +2,10 @@
   <div>
     <div class="container-piano">
       <div
-        class="key-white"
-        v-for="note in white"
-        :key="`key${note.name}`"
-        :id="`key${note.name}`"
-        @click="onClick(note)"
-        :data-keycode="note.keyCode"
-      ></div>
+        class="key-white" v-for="note in white" :key="`key${note.name}`" :id="`key${note.name}`" @click="onClick(note)" :data-keycode="note.keyCode"></div>
 
       <div class="container-key-black">
-        <div
-          class="key-black"
-          v-for="note in black"
-          :key="`key${note.name}`"
-          :id="`key${note.name}`"
-          @click="onClick(note)"
-          :data-keycode="note.keyCode"
-        ></div>
+        <div class="key-black" v-for="note in black" :key="`key${note.name}`" :id="`key${note.name}`" @click="onClick(note)" :data-keycode="note.keyCode"></div>
       </div>
     </div>
 
