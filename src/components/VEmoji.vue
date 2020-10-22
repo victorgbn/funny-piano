@@ -21,13 +21,10 @@ export default {
    async pickEmoji(){
       const gf = new GiphyFetch("hoc7Xw81iwUP2iewXhekupQznVmYDlHK");
       const { data: gifs } = await gf.emoji();
-      console.log(gifs);
       const nbRandom = Math.floor(Math.random() * 25);
       const gif = gifs[nbRandom].images.downsized.url;
-      // const image = document.getElementById("imgGif");
-      // image.setAttribute("src", gif);
       this.src = gif
-    }
+    },
   }
 };
 </script>
