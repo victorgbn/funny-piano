@@ -12,3 +12,5 @@ npm install
 ```
 npm run serve
 ```
+
+Développé par Victor Gaubin en LPDW Gennevilliers
