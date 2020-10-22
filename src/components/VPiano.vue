@@ -1,31 +1,29 @@
 <template>
 <div>
   <div class="container-piano">
-    <div class="key-white" id="key-do"></div>
+
+    <div class="key-white" v-for="note in white" :key="`key${note.name}`" :id="`key${note.name}`" @click="onClick(note)"></div>
+
+    <!-- <div class="key-white" id="key-do"></div>
     <div class="key-white" id="key-re"></div>
     <div class="key-white" id="key-mi"></div>
     <div class="key-white" id="key-fa"></div>
     <div class="key-white" id="key-sol"></div>
     <div class="key-white" id="key-la"></div>
-    <div class="key-white" id="key-si"></div>
+    <div class="key-white" id="key-si"></div> -->
 
     <div class="container-key-black">
-      <div class="key-black" id="key-do-d"></div>
+       <div class="key-black" v-for="note in black" :key="`key${note.name}`" :id="`key${note.name}`" @click="onClick(note)"></div>
+      <!-- <div class="key-black" id="key-do-d"></div>
       <div class="key-black" id="key-re-d"></div>
       <div class="key-black" id="key-fa-d"></div>
       <div class="key-black" id="key-sol-d"></div>
-      <div class="key-black" id="key-la-d"></div>
+      <div class="key-black" id="key-la-d"></div> -->
     </div>
   </div>
 
   <div class="container-note">
-    <p class="note-do">DO</p>
-    <p class="note-re">RÉ</p>
-    <p class="note-mi">MI</p>
-    <p class="note-fa">FA</p>
-    <p class="note-sol">SOL</p>
-    <p class="note-la">LA</p>
-    <p class="note-si">SI</p>
+    <p class="note-do" v-for="note in white" :key="`key${note.name}`">{{note.name}}</p>
   </div>
 </div>
 </template>
@@ -33,214 +31,287 @@
 <script>
 export default {
   name: "VPiano",
-  mounted() {
 
-    const keyDo = document.getElementById("key-do");
-    keyDo.addEventListener("click", () => {
-      const noteC = document.createElement("audio");
-      noteC.src = "/assets/sounds/C.mp3";
-      noteC.play();
-    });
-
-    keyDo.addEventListener("mousedown", () => {
-        document.getElementsByClassName('note-do')[0].style.color = "#FFD12D";
-    });
-    keyDo.addEventListener("mouseup", () => {
-        document.getElementsByClassName('note-do')[0].style.color = "";
-    });
-
-    const keyRe = document.getElementById("key-re");
-    keyRe.addEventListener("click", () => {
-      const noteD = document.createElement("audio");
-      noteD.src = "/assets/sounds/D.mp3";
-      noteD.play();
-    });
-
-    keyRe.addEventListener("mousedown", () => {
-        document.getElementsByClassName('note-re')[0].style.color = "#FFD12D";
-    });
-    keyRe.addEventListener("mouseup", () => {
-        document.getElementsByClassName('note-re')[0].style.color = "";
-    });
-
-    const keyMi = document.getElementById("key-mi");
-    keyMi.addEventListener("click", () => {
-      const noteE = document.createElement("audio");
-      noteE.src = "/assets/sounds/E.mp3";
-      noteE.play();
-    });
-
-    keyMi.addEventListener("mousedown", () => {
-        document.getElementsByClassName('note-mi')[0].style.color = "#FFD12D";
-    });
-    keyMi.addEventListener("mouseup", () => {
-        document.getElementsByClassName('note-mi')[0].style.color = "";
-    });
-
-    const keyFa = document.getElementById("key-fa");
-    keyFa.addEventListener("click", () => {
-      const noteF = document.createElement("audio");
-      noteF.src = "/assets/sounds/F.mp3";
-      noteF.play();
-    });
-
-    keyFa.addEventListener("mousedown", () => {
-        document.getElementsByClassName('note-fa')[0].style.color = "#FFD12D";
-    });
-    keyFa.addEventListener("mouseup", () => {
-        document.getElementsByClassName('note-fa')[0].style.color = "";
-    });
-
-    const keySol = document.getElementById("key-sol");
-    keySol.addEventListener("click", () => {
-      const noteG = document.createElement("audio");
-      noteG.src = "/assets/sounds/G.mp3";
-      noteG.play();
-    });
-
-    keySol.addEventListener("mousedown", () => {
-        document.getElementsByClassName('note-sol')[0].style.color = "#FFD12D";
-    });
-    keySol.addEventListener("mouseup", () => {
-        document.getElementsByClassName('note-sol')[0].style.color = "";
-    });
-
-    const keyLa = document.getElementById("key-la");
-    keyLa.addEventListener("click", () => {
-      const noteA = document.createElement("audio");
-      noteA.src = "/assets/sounds/A.mp3";
-      noteA.play();
-    });
-
-    keyLa.addEventListener("mousedown", () => {
-        document.getElementsByClassName('note-la')[0].style.color = "#FFD12D";
-    });
-    keyLa.addEventListener("mouseup", () => {
-        document.getElementsByClassName('note-la')[0].style.color = "";
-    });
-
-    const keySi = document.getElementById("key-si");
-    keySi.addEventListener("click", () => {
-      const noteB = document.createElement("audio");
-      noteB.src = "/assets/sounds/B.mp3";
-      noteB.play();
-    });
-
-    keySi.addEventListener("mousedown", () => {
-        document.getElementsByClassName('note-si')[0].style.color = "#FFD12D";
-    });
-    keySi.addEventListener("mouseup", () => {
-        document.getElementsByClassName('note-si')[0].style.color = "";
-    });
-
-    const keyDoD = document.getElementById("key-do-d");
-    keyDoD.addEventListener("click", () => {
-      const noteDoD = document.createElement("audio");
-      const uri = encodeURIComponent("/assets/sounds/C#.mp3");
-      noteDoD.src = uri;
-      noteDoD.play();
-    });
-
-    const keyReD = document.getElementById("key-re-d");
-    keyReD.addEventListener("click", () => {
-      const noteReD = document.createElement("audio");
-      const uri = encodeURIComponent("/assets/sounds/D#.mp3");
-      noteReD.src = uri;
-      noteReD.play();
-    });
-
-    const keyFaD = document.getElementById("key-fa-d");
-    keyFaD.addEventListener("click", () => {
-      const noteFaD = document.createElement("audio");
-      const uri = encodeURIComponent("/assets/sounds/F#.mp3");
-      noteFaD.src = uri;
-      noteFaD.play();
-    });
-
-    const keySolD = document.getElementById("key-sol-d");
-    keySolD.addEventListener("click", () => {
-      const noteSolD = document.createElement("audio");
-      const uri = encodeURIComponent("/assets/sounds/G#.mp3");
-      noteSolD.src = uri;
-      noteSolD.play();
-    });
-
-    const keyLaD = document.getElementById("key-la-d");
-    keyLaD.addEventListener("click", () => {
-      const noteLaD = document.createElement("audio");
-      const uri = encodeURIComponent("/assets/sounds/A#.mp3");
-      noteLaD.src = uri;
-      noteLaD.play();
-    });
-
-    document.addEventListener("keydown", () => {
-      if (event.isComposing || event.keyCode === 81) {
-        const noteC = document.createElement("audio");
-        noteC.src = "/assets/sounds/C.mp3";
-        noteC.play();
-      }
-      if (event.isComposing || event.keyCode === 83) {
-        const noteD = document.createElement("audio");
-        noteD.src = "/assets/sounds/D.mp3";
-        noteD.play();
-      }
-      if (event.isComposing || event.keyCode === 68) {
-        const noteE = document.createElement("audio");
-        noteE.src = "/assets/sounds/E.mp3";
-        noteE.play();
-      }
-      if (event.isComposing || event.keyCode === 70) {
-        const noteF = document.createElement("audio");
-        noteF.src = "/assets/sounds/F.mp3";
-        noteF.play();
-      }
-      if (event.isComposing || event.keyCode === 71) {
-        const noteG = document.createElement("audio");
-        noteG.src = "/assets/sounds/G.mp3";
-        noteG.play();
-      }
-      if (event.isComposing || event.keyCode === 72) {
-        const noteA = document.createElement("audio");
-        noteA.src = "/assets/sounds/A.mp3";
-        noteA.play();
-      }
-      if (event.isComposing || event.keyCode === 74) {
-        const noteB = document.createElement("audio");
-        noteB.src = "/assets/sounds/B.mp3";
-        noteB.play();
-      }
-      if (event.isComposing || event.keyCode === 90) {
-        const noteDoD = document.createElement("audio");
-        const uriDoD = encodeURIComponent("/assets/sounds/C#.mp3");
-        noteDoD.src = uriDoD;
-        noteDoD.play();
-      }
-      if (event.isComposing || event.keyCode === 69) {
-        const noteReD = document.createElement("audio");
-        const uriReD = encodeURIComponent("/assets/sounds/D#.mp3");
-        noteReD.src = uriReD;
-        noteReD.play();
-      }
-      if (event.isComposing || event.keyCode === 84) {
-        const noteFaD = document.createElement("audio");
-        const uriFaD = encodeURIComponent("/assets/sounds/F#.mp3");
-        noteFaD.src = uriFaD;
-        noteFaD.play();
-      }
-      if (event.isComposing || event.keyCode === 89) {
-        const noteSolD = document.createElement("audio");
-        const uriSolD = encodeURIComponent("/assets/sounds/G#.mp3");
-        noteSolD.src = uriSolD;
-        noteSolD.play();
-      }
-      if (event.isComposing || event.keyCode === 85) {
-        const noteLaD = document.createElement("audio");
-        const uriLaD = encodeURIComponent("/assets/sounds/A#.mp3");
-        noteLaD.src = uriLaD;
-        noteLaD.play();
-      }
-    });
+  data(){
+    return{
+      white : [
+        {
+          name :'do',
+          sound : 'C'
+        },
+        {
+          name :'re',
+          sound : 'D'
+        },
+        {
+          name :'mi',
+          sound : 'E'
+        },
+        {
+          name :'fa',
+          sound : 'F'
+        },
+        {
+          name :'sol',
+          sound : 'G'
+        },
+        {
+          name :'la',
+          sound : 'A'
+        },
+        {
+          name :'si',
+          sound : 'B'
+        },
+      ],
+      black: [
+        {
+          name:'do#',
+          sound: 'C#',
+        },
+        {
+          name:'re#',
+          sound: 'D#',
+        },
+        {
+          name:'fa#',
+          sound: 'F#',
+        },
+        {
+          name:'sol#',
+          sound: 'G#',
+        },
+        {
+          name:'la#',
+          sound: 'A#',
+        },
+      ],
+    }
   },
+
+  mounted() {
+     console.log(this)
+     this.vEmoji = this.$parent.$children[1]
+     this.audio = document.createElement('audio')
+
+    // const keyDo = document.getElementById("key-do");
+    // keyDo.addEventListener("click", () => {
+    //   const noteC = document.createElement("audio");
+    //   noteC.src = "/assets/sounds/C.mp3";
+    //   noteC.play();
+    //   vEmoji.pickEmoji()
+    // });
+
+    // keyDo.addEventListener("mousedown", () => {
+    //     document.getElementsByClassName('note-do')[0].style.color = "#FFD12D";
+    // });
+    // keyDo.addEventListener("mouseup", () => {
+    //     document.getElementsByClassName('note-do')[0].style.color = "";
+    // });
+
+    // const keyRe = document.getElementById("key-re");
+    // keyRe.addEventListener("click", () => {
+    //   const noteD = document.createElement("audio");
+    //   noteD.src = "/assets/sounds/D.mp3";
+    //   noteD.play();
+    // });
+
+    // keyRe.addEventListener("mousedown", () => {
+    //     document.getElementsByClassName('note-re')[0].style.color = "#FFD12D";
+    // });
+    // keyRe.addEventListener("mouseup", () => {
+    //     document.getElementsByClassName('note-re')[0].style.color = "";
+    // });
+
+    // const keyMi = document.getElementById("key-mi");
+    // keyMi.addEventListener("click", () => {
+    //   const noteE = document.createElement("audio");
+    //   noteE.src = "/assets/sounds/E.mp3";
+    //   noteE.play();
+    // });
+
+    // keyMi.addEventListener("mousedown", () => {
+    //     document.getElementsByClassName('note-mi')[0].style.color = "#FFD12D";
+    // });
+    // keyMi.addEventListener("mouseup", () => {
+    //     document.getElementsByClassName('note-mi')[0].style.color = "";
+    // });
+
+    // const keyFa = document.getElementById("key-fa");
+    // keyFa.addEventListener("click", () => {
+    //   const noteF = document.createElement("audio");
+    //   noteF.src = "/assets/sounds/F.mp3";
+    //   noteF.play();
+    // });
+
+    // keyFa.addEventListener("mousedown", () => {
+    //     document.getElementsByClassName('note-fa')[0].style.color = "#FFD12D";
+    // });
+    // keyFa.addEventListener("mouseup", () => {
+    //     document.getElementsByClassName('note-fa')[0].style.color = "";
+    // });
+
+    // const keySol = document.getElementById("key-sol");
+    // keySol.addEventListener("click", () => {
+    //   const noteG = document.createElement("audio");
+    //   noteG.src = "/assets/sounds/G.mp3";
+    //   noteG.play();
+    // });
+
+    // keySol.addEventListener("mousedown", () => {
+    //     document.getElementsByClassName('note-sol')[0].style.color = "#FFD12D";
+    // });
+    // keySol.addEventListener("mouseup", () => {
+    //     document.getElementsByClassName('note-sol')[0].style.color = "";
+    // });
+
+    // const keyLa = document.getElementById("key-la");
+    // keyLa.addEventListener("click", () => {
+    //   const noteA = document.createElement("audio");
+    //   noteA.src = "/assets/sounds/A.mp3";
+    //   noteA.play();
+    // });
+
+    // keyLa.addEventListener("mousedown", () => {
+    //     document.getElementsByClassName('note-la')[0].style.color = "#FFD12D";
+    // });
+    // keyLa.addEventListener("mouseup", () => {
+    //     document.getElementsByClassName('note-la')[0].style.color = "";
+    // });
+
+    // const keySi = document.getElementById("key-si");
+    // keySi.addEventListener("click", () => {
+    //   const noteB = document.createElement("audio");
+    //   noteB.src = "/assets/sounds/B.mp3";
+    //   noteB.play();
+    // });
+
+    // keySi.addEventListener("mousedown", () => {
+    //     document.getElementsByClassName('note-si')[0].style.color = "#FFD12D";
+    // });
+    // keySi.addEventListener("mouseup", () => {
+    //     document.getElementsByClassName('note-si')[0].style.color = "";
+    // });
+
+    // const keyDoD = document.getElementById("key-do-d");
+    // keyDoD.addEventListener("click", () => {
+    //   const noteDoD = document.createElement("audio");
+    //   const uri = encodeURIComponent("/assets/sounds/C#.mp3");
+    //   noteDoD.src = uri;
+    //   noteDoD.play();
+    // });
+
+    // const keyReD = document.getElementById("key-re-d");
+    // keyReD.addEventListener("click", () => {
+    //   const noteReD = document.createElement("audio");
+    //   const uri = encodeURIComponent("/assets/sounds/D#.mp3");
+    //   noteReD.src = uri;
+    //   noteReD.play();
+    // });
+
+    // const keyFaD = document.getElementById("key-fa-d");
+    // keyFaD.addEventListener("click", () => {
+    //   const noteFaD = document.createElement("audio");
+    //   const uri = encodeURIComponent("/assets/sounds/F#.mp3");
+    //   noteFaD.src = uri;
+    //   noteFaD.play();
+    // });
+
+    // const keySolD = document.getElementById("key-sol-d");
+    // keySolD.addEventListener("click", () => {
+    //   const noteSolD = document.createElement("audio");
+    //   const uri = encodeURIComponent("/assets/sounds/G#.mp3");
+    //   noteSolD.src = uri;
+    //   noteSolD.play();
+    // });
+
+    // const keyLaD = document.getElementById("key-la-d");
+    // keyLaD.addEventListener("click", () => {
+    //   const noteLaD = document.createElement("audio");
+    //   const uri = encodeURIComponent("/assets/sounds/A#.mp3");
+    //   noteLaD.src = uri;
+    //   noteLaD.play();
+    // });
+
+    // document.addEventListener("keydown", () => {
+    //   if (event.isComposing || event.keyCode === 81) {
+    //     const noteC = document.createElement("audio");
+    //     noteC.src = "/assets/sounds/C.mp3";
+    //     noteC.play();
+    //   }
+    //   if (event.isComposing || event.keyCode === 83) {
+    //     const noteD = document.createElement("audio");
+    //     noteD.src = "/assets/sounds/D.mp3";
+    //     noteD.play();
+    //   }
+    //   if (event.isComposing || event.keyCode === 68) {
+    //     const noteE = document.createElement("audio");
+    //     noteE.src = "/assets/sounds/E.mp3";
+    //     noteE.play();
+    //   }
+    //   if (event.isComposing || event.keyCode === 70) {
+    //     const noteF = document.createElement("audio");
+    //     noteF.src = "/assets/sounds/F.mp3";
+    //     noteF.play();
+    //   }
+    //   if (event.isComposing || event.keyCode === 71) {
+    //     const noteG = document.createElement("audio");
+    //     noteG.src = "/assets/sounds/G.mp3";
+    //     noteG.play();
+    //   }
+    //   if (event.isComposing || event.keyCode === 72) {
+    //     const noteA = document.createElement("audio");
+    //     noteA.src = "/assets/sounds/A.mp3";
+    //     noteA.play();
+    //   }
+    //   if (event.isComposing || event.keyCode === 74) {
+    //     const noteB = document.createElement("audio");
+    //     noteB.src = "/assets/sounds/B.mp3";
+    //     noteB.play();
+    //   }
+    //   if (event.isComposing || event.keyCode === 90) {
+    //     const noteDoD = document.createElement("audio");
+    //     const uriDoD = encodeURIComponent("/assets/sounds/C#.mp3");
+    //     noteDoD.src = uriDoD;
+    //     noteDoD.play();
+    //   }
+    //   if (event.isComposing || event.keyCode === 69) {
+    //     const noteReD = document.createElement("audio");
+    //     const uriReD = encodeURIComponent("/assets/sounds/D#.mp3");
+    //     noteReD.src = uriReD;
+    //     noteReD.play();
+    //   }
+    //   if (event.isComposing || event.keyCode === 84) {
+    //     const noteFaD = document.createElement("audio");
+    //     const uriFaD = encodeURIComponent("/assets/sounds/F#.mp3");
+    //     noteFaD.src = uriFaD;
+    //     noteFaD.play();
+    //   }
+    //   if (event.isComposing || event.keyCode === 89) {
+    //     const noteSolD = document.createElement("audio");
+    //     const uriSolD = encodeURIComponent("/assets/sounds/G#.mp3");
+    //     noteSolD.src = uriSolD;
+    //     noteSolD.play();
+    //   }
+    //   if (event.isComposing || event.keyCode === 85) {
+    //     const noteLaD = document.createElement("audio");
+    //     const uriLaD = encodeURIComponent("/assets/sounds/A#.mp3");
+    //     noteLaD.src = uriLaD;
+    //     noteLaD.play();
+    //   }
+    // });
+
+  },
+  
+  methods: {
+    onClick(note){
+      console.log(note)
+      const name = encodeURIComponent(note.sound)
+      this.audio.src = `/assets/sounds/${name}.mp3`
+      this.audio.play();
+      this.vEmoji.pickEmoji()
+    }
+  }
 };
 </script>
 

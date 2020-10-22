@@ -1,6 +1,6 @@
 <template>
   <div class="container-emoji">
-    <img alt="GIF trop drôle" id="imgGif" />
+    <img alt="GIF trop drôle" id="imgGif" :src="src" v-if="src"/>
   </div>
 </template>
 
@@ -9,17 +9,26 @@ import { GiphyFetch } from "@giphy/js-fetch-api";
 export default {
   GiphyFetch,
   mounted() {
-    const emoji = async () => {
+  },
+
+  data(){
+    return {
+      src: null
+    }
+  },
+
+  methods: {
+   async pickEmoji(){
       const gf = new GiphyFetch("hoc7Xw81iwUP2iewXhekupQznVmYDlHK");
       const { data: gifs } = await gf.emoji();
       console.log(gifs);
       const nbRandom = Math.floor(Math.random() * 25);
       const gif = gifs[nbRandom].images.downsized.url;
-      const image = document.getElementById("imgGif");
-      image.setAttribute("src", gif);
-    };
-    emoji();
-  },
+      // const image = document.getElementById("imgGif");
+      // image.setAttribute("src", gif);
+      this.src = gif
+    }
+  }
 };
 </script>
 
