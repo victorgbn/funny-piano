@@ -7,7 +7,6 @@
 </template>
 
 <script>
-// import func from '../vue-temp/vue-editor-bridge';
 import VHeader from '@/components/VHeader'
 import VEmoji from '@/components/VEmoji'
 import VPiano from  '@/components/VPiano'

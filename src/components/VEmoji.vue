@@ -1,6 +1,6 @@
 <template>
   <div class="container-emoji">
-    <img alt="GIF" id="imgGif">
+    <img alt="GIF trop drôle" id="imgGif" />
   </div>
 </template>
 
@@ -11,12 +11,12 @@ export default {
   mounted() {
     const emoji = async () => {
       const gf = new GiphyFetch("hoc7Xw81iwUP2iewXhekupQznVmYDlHK");
-      const { data: gifs } = await gf.emoji({ sort: 'football', lang: 'fr', limit: 5 });
+      const { data: gifs } = await gf.emoji();
       console.log(gifs);
-      console.log(gifs[0].embed_url)
-      const gif = gifs[0].embed_url
-      const image = document.getElementById('imgGif');
-      image.setAttribute('src', gif);
+      const nbRandom = Math.floor(Math.random() * 25);
+      const gif = gifs[nbRandom].images.downsized.url;
+      const image = document.getElementById("imgGif");
+      image.setAttribute("src", gif);
     };
     emoji();
   },
@@ -25,13 +25,14 @@ export default {
 
 <style lang="postcss" scoped>
 .container-emoji {
-  border: solid 1px blue;
   width: 200px;
   height: 200px;
   margin-top: 29px;
 }
 .container-emoji img {
+  border-radius: 20px;
   width: 100%;
   height: 100%;
+  filter: drop-shadow(0 0 0.75rem crimson);
 }
 </style>

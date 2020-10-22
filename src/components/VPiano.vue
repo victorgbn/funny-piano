@@ -34,6 +34,7 @@
 export default {
   name: "VPiano",
   mounted() {
+
     const keyDo = document.getElementById("key-do");
     keyDo.addEventListener("click", () => {
       const noteC = document.createElement("audio");
