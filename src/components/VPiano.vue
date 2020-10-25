@@ -204,6 +204,7 @@ export default {
   justify-content: space-around;
   width: 531px;
   margin-top: 48px;
+  padding-bottom: 30px;
   font-family: "PT Mono", monospace;
   color: rgba(255, 255, 255, 0.4);
 }
